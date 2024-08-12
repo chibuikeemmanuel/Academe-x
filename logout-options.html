@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout Options - Academe-X</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        .logout-box {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .logout-box h2 {
+            color: #004b8d;
+            margin-bottom: 20px;
+        }
+
+        .logout-options {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .option-btn {
+            padding: 10px 20px;
+            background: #004b8d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .option-btn:hover {
+            background: #007acc;
+        }
+
+        @media (max-width: 600px) {
+            .logout-box {
+                padding: 20px;
+            }
+
+            .logout-box h2 {
+                font-size: 22px;
+            }
+
+            .option-btn {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logout-box">
+        <h2>You have successfully logged out.</h2>
+        <div class="logout-options">
+            <button class="option-btn" onclick="location.href='index.html'">Go to Homepage</button>
+            <button class="option-btn" onclick="location.href='login.html'">Login Again</button>
+        </div>
+    </div>
+</body>
+</html>

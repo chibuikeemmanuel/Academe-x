@@ -1,0 +1,380 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+  font-family: Roboto, sans-serif;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  list-style: none;
+  text-decoration: none;
+  border: none;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+  text-transform: capitalize;
+}
+
+:root {
+  --pink: #ff6a6d;
+  --light-pink: #fff7f7;
+  --white: #fff;
+  --light-color: #777;
+  --black: #444;
+  --box-shadow: 0 0.6rem 0.9rem rgba(0, 0, 0, 0.2);
+  --border: 0.1rem solid #ff6a6d;
+}
+
+.heading-link {
+  text-align: center;
+  background-color: var(--light-pink);
+}
+
+.heading-link h3 {
+  font-size: 4rem;
+  color: var(--black);
+}
+
+.heading-link p {
+  font-size: 2rem;
+  color: var(--light-color);
+  line-height: 2;
+}
+
+.heading-link p a {
+  color: var(--pink);
+}
+
+.heading-link p a:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  display: inline-block;
+  color: var(--black);
+  margin-top: 1rem;
+  padding: 1rem 3rem;
+  font-size: 1.8rem;
+  border: var(--border);
+  background-color: var(--light-pink);
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--pink);
+  color: var(--white);
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+  width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: 0 0;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--pink);
+}
+
+section {
+  padding: 5rem 10%;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 3.5rem;
+  color: var(--black);
+}
+
+.header {
+  position: sticky;
+  left: 0;
+  top: 0;
+  right: 0;
+  background-color: var(--white);
+  -webkit-box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow);
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 2rem 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 1000;
+}
+
+.header .logo {
+  margin-right: auto;
+  font-size: 2.6rem;
+  color: var(--black);
+  font-weight: 700;
+}
+
+.header .navbar {
+  position: relative;
+}
+
+.header .navbar a {
+  margin-right: 2rem;
+  font-size: 2rem;
+  color: var(--black);
+}
+
+.header .navbar a:hover {
+  color: var(--pink);
+}
+
+.header .icons div {
+  cursor: pointer;
+  font-size: 2.5rem;
+  color: var(--black);
+  margin-left: 1.5rem;
+}
+
+.header .icons div:hover {
+  color: var(--pink);
+}
+
+.header #menu-btn {
+  display: none;
+}
+
+.account-form {
+  position: fixed;
+  right: -105%;
+  top: 0;
+  width: 35rem;
+  background-color: var(--white);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  gap: 2rem;
+  height: 100%;
+  padding: 2rem;
+  text-align: center;
+  z-index: 1300;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
+  flex-flow: column;
+}
+
+.account-form.active {
+  right: 0;
+  -webkit-box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow);
+}
+
+.account-form #close-form {
+  position: absolute;
+  top: 1.5rem;
+  right: 2.5rem;
+  font-size: 4rem;
+  cursor: pointer;
+  color: var(--black);
+}
+
+.account-form #close-form:hover {
+  color: var(--pink);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.account-form form {
+  border: var(--border);
+  padding: 2rem;
+  display: none;
+}
+
+.account-form form.active {
+  display: block;
+}
+
+.account-form form h3 {
+  font-size: 2.5rem;
+  color: var(--black);
+  padding-bottom: 0.5rem;
+}
+
+.account-form form .box {
+  width: 100%;
+  padding: 1.2rem 1.4rem;
+  border: var(--border);
+  font-size: 1.6rem;
+  margin: 0.7rem 0;
+}
+
+.account-form form .flex {
+  padding: 1rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.account-form form .flex label {
+  font-size: 1.5rem;
+  color: var(--light-color);
+  cursor: pointer;
+}
+
+.account-form form .flex a {
+  font-size: 1.5rem;
+  color: var(--light-color);
+  margin-left: auto;
+}
+
+.account-form form .flex a:hover {
+  text-decoration: underline;
+  color: var(--pink);
+}
+
+.account-form .buttons .btn {
+  margin: 0 0.5rem;
+}
+
+.account-form .buttons .btn.active {
+  color: var(--white);
+  background-color: var(--pink);
+}
+
+.home {
+  padding: 0;
+}
+
+.home .slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 60rem;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.home .slider .content {
+  width: 50rem;
+}
+
+.home .slider .content h3 {
+  color: var(--white);
+  font-size: 5rem;
+}
+
+.home .slider .content p {
+  font-size: 1.6rem;
+  line-height: 1.9;
+  color: var(--white);
+  padding: 1rem 0;
+}
+
+.subjects .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 2rem;
+}
+
+.subjects .box-container .box {
+  padding: 3rem 2rem;
+  text-align: center;
+  border: var(--border);
+  background-color: var(--light-pink);
+  cursor: pointer;
+}
+
+.subjects .box-container .box:hover {
+  background-color: var(--pink);
+}
+
+.subjects .box-container .box:hover h3 {
+  color: var(--white);
+}
+
+.subjects .box-container .box:hover p {
+  color: var(--black);
+}
+
+.subjects .box-container .box img {
+  height: 10rem;
+  margin-bottom: 0.7rem;
+}
+
+.subjects .box-container .box h3 {
+  font-size: 1.7rem;
+  color: var(--black);
+  padding: 0.5rem 0;
+}
+
+.subjects .box-container .box p {
+  font-size: 1.5rem;
+  line-height: 2;
+  color: var(--light-color);
+}
+
+.home-courses .slide {
+  text-align: center;
+  position: relative;
+  background-color: var(--light-pink);
+  overflow: hidden;
+}
+
+.home-courses .slide:hover .content {
+  bottom: 0;
+}
+
+.home-courses .slide .image {
+  padding: 2rem;
+}
+
+.home-courses .slide .image img {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.home-courses .slide .image h3 {
+  font-size: 2rem;
+  color: var(--black);
+}
+
+.home-courses .slide .content {
+  position: absolute;
+  bottom: -100%;
+  right: 0;
+  left: 0;
+  background-color: var(--pink);
+  padding: 2rem 3rem;
+}
+
+.home-courses .slide .content h3 {
+  font-size: 2rem;
+  color: var(--black);
+}
+
+.home-courses .slide .content p {
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  line-height: 2;
+  color: var(--light-color);
+}
+
+.home-courses .slide .content .btn:hover {
+  background-color: var(--white);
+  color: var(--pink);
+}
+

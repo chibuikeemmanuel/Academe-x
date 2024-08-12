@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- Swiper CSS Link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <!-- CSS File Link -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Academe-X</title>
+    <style>
+        /* Add custom styles here */
+body {
+    font-family: Arial, sans-serif;
+    background-color:transparent; /* Updated background color */
+}
+
+.box {
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+.header {
+    background-color: transparent; /* Black background */
+    color: #fff; /* White text */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.navbar a {
+    color: #060606; /* Changed color to white */
+    font-weight: bold; /* Make text bold for better visibility */
+    font-size: 18px; /* Increase font size */
+    text-shadow: 1px 1px 2px #ffffff; /* Add a slight shadow for better visibility */
+    text-decoration: none;
+    padding: 14px 20px;
+    display: inline-block;
+    transition: background-color 0.3s, border 0.3s;
+}
+
+.navbar a.active {
+    border: 2px solid #007bff; /* Blue border for active link */
+    border-radius: 4px; /* Rounded corners for the box */
+    background-color: #000000; /* Dark background for active link */
+    color: #ffffff; /* White text for active link */
+}
+
+.navbar a:hover {
+    background-color: #007bff; /* Blue hover effect */
+    color: #000000; /* White text on hover */
+}
+
+
+.account-form .box, .input, .email {
+    border: 2px solid #000; /* Black rectangle box style */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.subjects .box img, .home-courses .slide img {
+    width: 100%; /* Make images responsive */
+    height: auto;
+}
+
+.footer {
+    background: #333;
+    color: white;
+    padding: 20px;
+}
+
+.footer .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer .box {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer .box h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.footer .box a, .footer .box p {
+    font-size: 18px;
+    margin-bottom: 5px;
+    display: block;
+    color: #ccc;
+}
+
+.footer .box a:hover {
+    color: #fff;
+}
+
+.footer .box .social-icon {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.footer .credit {
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .about .icons-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .teachers-slider, .reviews-slider {
+        flex-direction: column;
+        overflow-x: auto;
+    }
+
+    .teachers-slider .slide, .reviews-slider .slide {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .footer .box-container {
+        flex-direction: column;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Header Start -->
+    <header class="header">
+        <a href="index.html" class="logo" style="color: rgb(0, 0, 0);">Academe-X</a>
+        <nav class="navbar">
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="courses.html">Courses</a>
+            <a href="contact.html">Contact</a>
+            <a href="need-help.html">Help</a>
+
+        </nav>
+        <div class="icons">
+            <!-- Icons here, without JavaScript functionality -->
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Account Form Start -->
+    <div class="account-form">
+        <div class="buttons">
+            <span class="btn login-btn active">Login</span>
+            <span class="btn register-btn">Register</span>
+        </div>
+        <!-- Login Form -->
+        <form action="" class="login-form active">
+            <h3>Login Now</h3>
+            <input type="email" placeholder="Enter your email" class="box input">
+            <input type="password" placeholder="Enter your password" class="box input">
+            <div class="flex">
+                <input type="checkbox" id="remember-me">
+                <label for="remember-me">Remember me</label>
+                <a href="forgot-password.html">Forgot password?</a>
+            </div>
+            <input type="submit" class="btn" value="Login Now">
+        </form>
+        <!-- Register Form -->
+        <form action="" class="register-form">
+            <h3>Register Now</h3>
+            <input type="email" placeholder="Enter your email" class="box input">
+            <input type="password" placeholder="Enter your password" class="box input">
+            <input type="password" placeholder="Confirm your password" class="box input">
+            <input type="submit" class="btn" value="Register Now">
+        </form>
+    </div>
+    <!-- Account Form End -->
+
+    <!-- Home Start -->
+    <section class="home">
+        <div class="home-slider swiper">
+            <div class="swiper-wrapper">
+                <!-- Slider Sections -->
+                <section class="swiper-slide slider" style="background-image: url(images/home-1.jpg)">
+                    <div class="content">
+                        <h3>Innovative Education Solutions!</h3>
+                        <p>Harness top-notch learning technology to create a perfect workflow within any educational institution.</p>
+                        <a href="signup.html" class="btn">Get Started</a>
+                    </div>
+                </section>
+                <!-- Additional sliders here -->
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <!-- Home End -->
+
+   
+    <!-- Home Courses Start -->
+    <section class="home-courses">
+        <h1 class="heading">Our Courses</h1>
+        <div class="home-courses-slider swiper">
+            <div class="swiper-wrapper">
+                <div class="slide swiper-slide">
+                    <div class="image">
+                        <img src="./images/course-home-1.png" alt="">
+                        <h3>Web Development</h3>
+                    </div>
+                    <div class="content">
+                        <h3>Web Development</h3>
+                        <p>Learn how to build websites and web applications from scratch using the latest technologies and frameworks.</p>
+                        <a href="courses.html" class="btn">Read More</a>
+                    </div>
+                </div>
+                <!-- Additional courses here -->
+            </div>
+        </div>
+    </section>
+    <!-- Home Courses End -->
+
+    <footer class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="courses.html">Courses</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="box">
+                <h3>Extra Links</h3>
+                <a href="#">My Account</a>
+                <a href="#">Order History</a>
+                <a href="#">Wishlist</a>
+                <a href="#">Newsletter</a>
+            </div>
+
+            <div class="box">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-phone"></i> +123-456-7890</p>
+                <p><i class="fas fa-envelope"></i> info@academe-x.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> New York, USA</p>
+                <div class="social">
+                    <a href="#" class="fab fa-facebook-f social-icon"></a>
+                    <a href="#" class="fab fa-twitter social-icon"></a>
+                    <a href="#" class="fab fa-instagram social-icon"></a>
+                    <a href="#" class="fab fa-linkedin social-icon"></a>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>Newsletter</h3>
+                <p>Subscribe to receive the latest news and updates.</p>
+                <input type="email" placeholder="Enter your email" class="box">
+                <input type="submit" value="Subscribe" class="btn">
+            </div>
+        </div>
+        <div class="credit">Created by <span>Academe-X Team</span> | All Rights Reserved</div>
+    </footer>
+
+    <!-- Swiper JS Link -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <!-- Custom JS File Link -->
+    <script src="js/script.js"></script>
+</body>
+</html>

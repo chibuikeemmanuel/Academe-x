@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- Swiper CSS Link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <!-- CSS File Link -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Other Courses</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #000000;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            border: 2px solid black;
+            border-radius: 5px;
+            padding: 15px;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 18px;
+        }
+        
+        .header {
+            background-color: #004d99;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* Allow header items to wrap on small screens */
+        }
+        .header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+        .header .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .header .icons .fas {
+            color: white;
+            margin-left: 15px;
+            cursor: pointer;
+        }
+        .heading-link {
+            background-color: #004d99;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .courses {
+            padding: 20px;
+        }
+        .courses .heading {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .courses .box-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .courses .box {
+            background-color: white;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            width: calc(20% - 20px); /* Adjusted for 5 boxes per row */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: unset ; /* Set a fixed height for uniform card size */
+        }
+        .courses .box .image img {
+            width: 100%;
+            height: 150px; /* Fixed height for image */
+            object-fit: cover; /* Ensure image covers the area */
+            border-bottom: 2px solid #ddd;
+        }
+        .courses .box .content {
+         
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+        .courses .box .content h3 {
+            margin: 0 0 10px;
+            font-size: 20px; /* Adjust font size */
+        }
+        .courses .box .icons {
+            font-size: 14px;
+            color: #000000;
+            margin-top: 10px;
+        }
+        
+        .footer {
+            background: #333;
+            color: white;
+            padding: 20px;
+        }
+
+        .footer .box-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer .box {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer .box h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .footer .box a, .footer .box p {
+            font-size: 18px;
+            margin-bottom: 5px;
+            display: block;
+            color: #ccc;
+            border: none;
+        }
+
+        .footer .box a:hover {
+            color: #fff;
+        }
+
+        .footer .box .social-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .footer .credit {
+            text-align: center;
+            padding: 1px;
+            
+            font-size: 18px;
+        }
+
+        @media (max-width: 480px) {
+            .courses .box {
+                width: 100%; /* One box per row */
+            }
+            .header {
+                padding: 10px;
+                flex-direction: column;
+                text-align: center;
+            }
+            .header .logo {
+                margin-bottom: 10px;
+            }
+            .header .icons {
+                margin-top: 10px;
+            }
+            .footer .box-container {
+                flex-direction: column;
+            }
+            .footer .box {
+                margin-bottom: 20px;
+            }
+        }
+        /* What Students Ask and FAQ Sections */
+.what-students-ask, .faq {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+.what-students-ask h1, .faq h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #004d99;
+}
+
+.faq-item h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #004d99;
+}
+
+.faq-item p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .what-students-ask h1, .faq h1 {
+        font-size: 24px;
+    }
+
+    .faq-item h3 {
+        font-size: 20px;
+    }
+
+    .faq-item p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .what-students-ask h1, .faq h1 {
+        font-size: 20px;
+    }
+
+    .faq-item h3 {
+        font-size: 18px;
+    }
+
+    .faq-item p {
+        font-size: 14px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Header Start -->
+    <header class="header">
+        <a href="index.html" class="logo">Academe-X</a>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="courses.html">Courses</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <!-- Header End -->
+
+    <section class="heading-link">
+        <h3>Explore More Courses</h3>
+        <p><a href="index.html">Home</a> / <a href="courses.html">Courses</a> / Other Courses</p>
+    </section>
+
+    <!-- Courses Start -->
+    <section class="courses">
+        <h1 class="heading">Additional Courses</h1>
+        <div class="box-container">
+            <!-- 20 Course Boxes -->
+            <div class="box">
+                <div class="image">
+                    <img src="images/course-1.jpg" alt="Course 1">
+                </div>
+                <div class="content">
+                    <h3>Marketing</h3>
+                    <p>Discover various marketing strategies and techniques.</p>
+                    <a href="#" class="btn">Enroll Now</a>
+                    <div class="icons">
+                        <span><i class="fas fa-book"></i>18 Modules</span>
+                        <span><i class="fas fa-clock"></i>9 Hours</span>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="images/course-2.jpg" alt="Course 2">
+                </div>
+                <div class="content">
+                    <h3>Design</h3>
+                    <p>Learn to create stunning visuals with advanced design techniques.</p>
+                    <a href="#" class="btn">Enroll Now</a>
+                    <div class="icons">
+                        <span><i class="fas fa-book"></i>22 Modules</span>
+                        <span><i class="fas fa-clock"></i>12 Hours</span>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="images/course-3.jpg" alt="Course 3">
+                </div>
+                <div class="content">
+                    <h3>Programming</h3>
+                    <p>From basics to advanced programming techniques.</p>
+                    <a href="#" class="btn">Enroll Now</a>
+                    <div class="icons">
+                        <span><i class="fas fa-book"></i>25 Modules</span>
+                        <span><i class="fas fa-clock"></i>15 Hours</span>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="images/course-4.jpg" alt="Course 4">
+                </div>
+                <div class="content">
+                    <h3>Data Science</h3>
+                    <p>Learn how to analyze and visualize data effectively.</p>
+                    <a href="#" class="btn">Enroll Now</a>
+                    <div class="icons">
+                        <span><i class="fas fa-book"></i>30 Modules</span>
+                        <span><i class="fas fa-clock"></i>20 Hours</span>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="https://i.pinimg.com/474x/c6/0f/d9/c60fd9aff016d5dacc5e707ffbb29dc6.jpg" alt="Course 5">
+                </div>
+                <div class="content">
+                    <h3>Photography</h3>
+                    <p>Enhance your photography skills with professional tips.</p>
+                    <a href="#" class="btn">Enroll Now</a>
+                    <div class="icons">
+                        <span><i class="fas fa-book"></i>15 Modules</span>
+                        <span><i class="fas fa-clock"></i>8 Hours</span>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="images/course-6.jpg" alt="Course 6">
+                </div>
+                <div class="content">
+                    <h3>Finance</h3>
+                    <p>Master financial management and investment strategies.</p>
+                    <a href="#" class="btn">Enroll Now</a>
+                    <div class="icons">
+                        <span><i class="fas fa-book"></i>18 Modules</span>
+                        <span><i class="fas fa-clock"></i>10 Hours</span>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="images/course-7.jpg" alt="Course 7">
+                </div>
+                <div class="content">
+                    <h3>Entrepreneurship</h3>
+                    <p>Gain insights into starting and managing your own business.</p>
+                    <a href="#" class="btn">Enroll Now</a>
+                    <div class="icons">
+                        <span><i class="fas fa-book"></i>20 Modules</span>
+                        <span><i class="fas fa-clock"></i>14 Hours</span>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="images/course-8.jpg" alt="Course 8">
+                </div>
+                <div class="content">
+                    <h3>Music</h3>
+                    <p>Learn to play and understand music from basics to advanced.</p>
+                    <a href="#" class="btn">Enroll Now</a>
+                    <div class="icons">
+                        <span><i class="fas fa-book"></i>12 Modules</span>
+                        <span><i class="fas fa-clock"></i>7 Hours</span>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="images/course-9.jpg" alt="Course 9">
+                </div>
+                <div class="content">
+                    <h3>Health & Wellness</h3>
+                    <p>Improve your overall well-being with expert guidance.</p>
+                    <a href="#" class="btn">Enroll Now</a>
+                    <div class="icons">
+                        <span><i class="fas fa-book"></i>16 Modules</span>
+                        <span><i class="fas fa-clock"></i>9 Hours</span>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="images/course-10.jpg" alt="Course 10">
+                </div>
+                <div class="content">
+                    <h3>Language Learning</h3>
+                    <p>Enhance your language skills with practical lessons.</p>
+                    <a href="#" class="btn">Enroll Now</a>
+                    <div class="icons">
+                        <span><i class="fas fa-book"></i>22 Modules</span>
+                        <span><i class="fas fa-clock"></i>11 Hours</span>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="https://i.pinimg.com/474x/2b/c1/c9/2bc1c9c6efc3c194e67f30bfb0aa5e22.jpg" alt="Course 11">
+                </div>
+                <div class="content">
+                    <h3>Web Development</h3>
+                    <p>Master the skills needed for building modern websites.</p>
+                    <a href="#" class="btn">Enroll Now</a>
+                    <div class="icons">
+                        <span><i class="fas fa-book"></i>24 Modules</span>
+                        <span><i class="fas fa-clock"></i>13 Hours</span>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="https://i.pinimg.com/474x/80/cc/e5/80cce5d1eba874a40e7bf6f71626ba22.jpg" alt="Course 12">
+                </div>
+                <div class="content">
+                    <h3>Digital Marketing</h3>
+                    <p>Learn the latest digital marketing strategies and tools.</p>
+                    <a href="#" class="btn">Enroll Now</a>
+                    <div class="icons">
+                        <span><i class="fas fa-book"></i>19 Modules</span>
+                        <span><i class="fas fa-clock"></i>10 Hours</span>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="https://i.pinimg.com/474x/e6/ec/86/e6ec86d140147e8dc72514dbd2af546f.jpg" alt="Course 13">
+                </div>
+                <div class="content">
+                    <h3>Cybersecurity</h3>
+                    <p>Understand how to protect your digital information.</p>
+                    <a href="#" class="btn">Enroll Now</a>
+                    <div class="icons">
+                        <span><i class="fas fa-book"></i>21 Modules</span>
+                        <span><i class="fas fa-clock"></i>11 Hours</span>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="https://i.pinimg.com/564x/fa/26/32/fa2632a1c918fcffd49313e676841960.jpg" alt="Course 14">
+                </div>
+                <div class="content">
+                    <h3>AI & Machine Learning</h3>
+                    <p>Dive into the world of artificial intelligence and machine learning.</p>
+                    <a href="#" class="btn">Enroll Now</a>
+                    <div class="icons">
+                        <span><i class="fas fa-book"></i>26 Modules</span>
+                        <span><i class="fas fa-clock"></i>14 Hours</span>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="https://i.pinimg.com/474x/54/84/4a/54844a30617d3c0aced6b3221bb0722d.jpg" alt="Course 15">
+                </div>
+                <div class="content">
+                    <h3>Project Management</h3>
+                    <p>Learn effective techniques for managing projects and teams.</p>
+                    <a href="#" class="btn">Enroll Now</a>
+                    <div class="icons">
+                        <span><i class="fas fa-book"></i>17 Modules</span>
+                        <span><i class="fas fa-clock"></i>9 Hours</span>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="https://i.pinimg.com/474x/69/12/80/691280d4bb1b90a00f38167208fe5a84.jpg" alt="Course 16">
+                </div>
+                <div class="content">
+                    <h3>Leadership</h3>
+                    <p>Develop your leadership skills and strategies.</p>
+                    <a href="#" class="btn">Enroll Now</a>
+                    <div class="icons">
+                        <span><i class="fas fa-book"></i>20 Modules</span>
+                        <span><i class="fas fa-clock"></i>11 Hours</span>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="https://i.pinimg.com/474x/5f/ff/d3/5fffd37939af07c41090f6ab6c5bf856.jpg" alt="Course 17">
+                </div>
+                <div class="content">
+                    <h3>Creative Writing</h3>
+                    <p>Enhance your writing skills with creative techniques.</p>
+                    <a href="#" class="btn">Enroll Now</a>
+                    <div class="icons">
+                        <span><i class="fas fa-book"></i>14 Modules</span>
+                        <span><i class="fas fa-clock"></i>8 Hours</span>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="https://i.pinimg.com/474x/02/6e/38/026e3865c28f627255f9f5968087f943.jpg" alt="Course 18">
+                </div>
+                <div class="content">
+                    <h3>Cooking</h3>
+                    <p>Learn culinary skills and create delicious dishes.</p>
+                    <a href="#" class="btn">Enroll Now</a>
+                    <div class="icons">
+                        <span><i class="fas fa-book"></i>12 Modules</span>
+                        <span><i class="fas fa-clock"></i>7 Hours</span>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="https://i.pinimg.com/474x/92/ec/8c/92ec8cbe114ae63e3a65d261fa287b96.jpg" alt="Course 19">
+                </div>
+                <div class="content">
+                    <h3>Public Speaking</h3>
+                    <p>Improve your public speaking and presentation skills.</p>
+                    <a href="#" class="btn">Enroll Now</a>
+                    <div class="icons">
+                        <span><i class="fas fa-book"></i>16 Modules</span>
+                        <span><i class="fas fa-clock"></i>9 Hours</span>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="https://i.pinimg.com/474x/b4/7b/c1/b47bc1ec1a5bf67d190180500ca38c3c.jpg" alt="Course 20">
+                </div>
+                <div class="content">
+                    <h3>Data Analysis</h3>
+                    <p>Learn to analyze and interpret data effectively.</p>
+                    <a href="#" class="btn">Enroll Now</a>
+                    <div class="icons">
+                        <span><i class="fas fa-book"></i>22 Modules</span>
+                        <span><i class="fas fa-clock"></i>12 Hours</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- What Students Ask Section -->
+<section class="what-students-ask">
+    <h1>What Students Ask</h1>
+    <div class="faq-item">
+        <h3>How do I enroll in a course?</h3>
+        <p>To enroll in a course, simply navigate to the course page and click the "Enroll Now" button. Follow the prompts to complete the registration.</p>
+    </div>
+    <div class="faq-item">
+        <h3>Can I get a refund?</h3>
+        <p>Refunds are available under certain conditions. Please refer to our refund policy for more details.</p>
+    </div>
+    <div class="faq-item">
+        <h3>How can I contact support?</h3>
+        <p>You can contact support through the live chat feature on our website or by sending an email to support@example.com.</p>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq">
+    <h1>Frequently Asked Questions</h1>
+    <div class="faq-item">
+        <h3>What payment methods do you accept?</h3>
+        <p>We accept various payment methods including credit/debit cards and PayPal. Please check our payment options page for more details.</p>
+    </div>
+    <div class="faq-item">
+        <h3>Do you offer certificates?</h3>
+        <p>Yes, upon successful completion of a course, you will receive a certificate of completion.</p>
+    </div>
+    <div class="faq-item">
+        <h3>Is there a free trial available?</h3>
+        <p>We offer a free trial period for some of our courses. Check the course details for availability.</p>
+    </div>
+</section>
+
+
+    <footer>
+        <footer class="footer">
+            <div class="box-container">
+                <div class="box">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="courses.html">Courses</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+    
+                <div class="box">
+                    <h3>Extra Links</h3>
+                    <a href="#">My Account</a>
+                    <a href="#">Order History</a>
+                    <a href="#">Wishlist</a>
+                    <a href="#">Newsletter</a>
+                </div>
+    
+                <div class="box">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-phone"></i> +123-456-7890</p>
+                    <p><i class="fas fa-envelope"></i> contact@academe-x.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> New York, USA</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f social-icon"></i></a>
+                        <a href="#"><i class="fab fa-twitter social-icon"></i></a>
+                        <a href="#"><i class="fab fa-linkedin social-icon"></i></a>
+                        <a href="#"><i class="fab fa-instagram social-icon"></i></a>
+                    </div>
+                </div>
+            <div class="credit">
+                &copy; 2024 Academe-X. All rights reserved.
+            </div>
+    </footer>
+</body>
+</html>

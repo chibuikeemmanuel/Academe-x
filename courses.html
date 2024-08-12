@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- Swiper CSS Link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <!-- CSS File Link -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Other Courses</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            border: 2px solid black;
+            border-radius: 5px;
+            padding: 15px;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 18px;
+        }
+        
+        .header {
+            background-color: #004d99;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* Allow header items to wrap on small screens */
+        }
+        .header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+        .header .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .header .icons .fas {
+            color: white;
+            margin-left: 15px;
+            cursor: pointer;
+        }
+        .heading-link {
+            background-color: #004d99;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .courses {
+            padding: 20px;
+        }
+        .courses .heading {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .courses .box-container {
+            display: flex;
+            flex-wrap: nowrap; /* No wrap to keep boxes in a single row */
+            gap: 20px;
+            overflow-x: auto; /* Scroll horizontally if too many boxes */
+            padding-bottom: 20px; /* Space below the last course box */
+        }
+        .courses .box {
+            background-color: white;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            width: 300px; /* Adjusted width for larger boxes */
+            flex: 0 0 auto; /* Ensures boxes do not shrink or grow */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 400px; /* Increased height for larger boxes */
+        }
+        .courses .box .image img {
+            width: 100%;
+            height: 200px; /* Fixed height for image */
+            object-fit: cover; /* Ensure image covers the area */
+            border-bottom: 2px solid #ddd;
+        }
+        .courses .box .content {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+        .courses .box .content h3 {
+            margin: 0 0 10px;
+            font-size: 20px; /* Adjust font size */
+        }
+        .courses .box .icons {
+            font-size: 14px;
+            color: #555;
+            margin-top: 10px;
+        }
+        /* New Section for Learn More Button */
+        .learn-more-section {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: #f4f4f4;
+            margin-top: 30px;
+        }
+        .learn-more-section .btn-learn-more {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 20px;
+            color: #fff;
+            background-color: #004d99;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .learn-more-section .btn-learn-more:hover {
+            background-color: #002d66;
+        }
+
+        .footer {
+            background: #333;
+            color: white;
+            padding: 20px;
+        }
+
+        .footer .box-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer .box {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer .box h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .footer .box a, .footer .box p {
+            font-size: 18px;
+            margin-bottom: 5px;
+            display: block;
+            color: #ccc;
+        }
+
+        .footer .box a:hover {
+            color: #fff;
+        }
+
+        .footer .box .social-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .footer .credit {
+            text-align: center;
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .courses .box {
+                width: calc(50% - 20px); /* Two boxes per row */
+            }
+            .header .navbar {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .header .navbar a {
+                margin: 5px 0;
+            }
+            .footer .box-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .footer .box {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .courses .box {
+                width: 100%; /* One box per row */
+            }
+            .header {
+                padding: 10px;
+                flex-direction: column;
+                text-align: center;
+            }
+            .header .logo {
+                margin-bottom: 10px;
+            }
+            .header .icons {
+                margin-top: 10px;
+            }
+            .footer .box-container {
+                flex-direction: column;
+            }
+            .footer .box {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Start -->
+    <header class="header">
+        <a href="index.html" class="logo">Academe-X</a>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="courses.html">Courses</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <!-- Header End -->
+
+    <section class="heading-link">
+        <h3>Explore More Courses</h3>
+        <p><a href="index.html">Home</a> / <a href="courses.html">Courses</a> / Other Courses</p>
+    </section>
+
+    <!-- Courses Start -->
+    <section class="courses">
+        <h1 class="heading">Additional Courses</h1>
+        <div class="box-container">
+            <!-- Example of 5 Course Boxes -->
+            <div class="box">
+                <div class="image">
+                    <img src="images/course-1.jpg" alt="Course 1">
+                </div>
+                <div class="content">
+                    <h3>Marketing</h3>
+                    <p>Discover various marketing strategies and techniques.</p>
+                    <a href="#" class="btn">Enroll Now</a>
+                    <div class="icons">
+                        <span><i class="fas fa-book"></i>18 Modules</span>
+                        <span><i class="fas fa-clock"></i>9 Hours</span>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="images/course-2.jpg" alt="Course 2">
+                </div>
+                <div class="content">
+                    <h3>Design</h3>
+                    <p>Learn to create stunning visuals with advanced design techniques.</p>
+                    <a href="#" class="btn">Enroll Now</a>
+                    <div class="icons">
+                        <span><i class="fas fa-book"></i>22 Modules</span>
+                        <span><i class="fas fa-clock"></i>12 Hours</span>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="images/course-3.jpg" alt="Course 3">
+                </div>
+                <div class="content">
+                    <h3>Photography</h3>
+                    <p>Master the art of capturing moments with precision.</p>
+                    <a href="#" class="btn">Enroll Now</a>
+                    <div class="icons">
+                        <span><i class="fas fa-book"></i>15 Modules</span>
+                        <span><i class="fas fa-clock"></i>7 Hours</span>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="images/course-4.jpg" alt="Course 4">
+                </div>
+                <div class="content">
+                    <h3>Development</h3>
+                    <p>Enhance your coding skills with this comprehensive course.</p>
+                    <a href="#" class="btn">Enroll Now</a>
+                    <div class="icons">
+                        <span><i class="fas fa-book"></i>25 Modules</span>
+                        <span><i class="fas fa-clock"></i>15 Hours</span>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="images/course-5.jpg" alt="Course 5">
+                </div>
+                <div class="content">
+                    <h3>Business</h3>
+                    <p>Gain insights into effective business management strategies.</p>
+                    <a href="#" class="btn">Enroll Now</a>
+                    <div class="icons">
+                        <span><i class="fas fa-book"></i>20 Modules</span>
+                        <span><i class="fas fa-clock"></i>10 Hours</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Courses End -->
+
+    <!-- Learn More Section Start -->
+    <section class="learn-more-section">
+        <a href="other-courses.html" class="btn-learn-more">Learn More About Our Courses</a>
+    </section>
+    <!-- Learn More Section End -->
+
+    <!-- Footer Start -->
+    <footer class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="courses.html">Courses</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="box">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-phone"></i> +123 456 7890</p>
+                <p><i class="fas fa-envelope"></i> info@academe-x.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> New York City, USA</p>
+            </div>
+            <div class="box">
+                <h3>Follow Us</h3>
+                <a href="#"><i class="fab fa-facebook social-icon"></i></a>
+                <a href="#"><i class="fab fa-twitter social-icon"></i></a>
+                <a href="#"><i class="fab fa-instagram social-icon"></i></a>
+                <a href="#"><i class="fab fa-linkedin social-icon"></i></a>
+            </div>
+        </div>
+        <div class="credit">© 2024 Academe-X | All rights reserved.</div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- Swiper JS Link -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <!-- Custom JS File Link -->
+    <script src="js/script.js"></script>
+</body>
+</html>

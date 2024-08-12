@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Academe-X</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: #004b8d;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .nav-brand {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li {
+            margin: 0;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #a0d8ef;
+        }
+
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding-top: 60px; /* Adjusted for the navbar */
+        }
+
+        .login-box {
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            max-width: 800px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (min-width: 768px) {
+            .login-box {
+                flex-direction: row;
+            }
+        }
+
+        .left-section {
+            background: linear-gradient(135deg, #004b8d, #007acc);
+            color: white;
+            padding: 40px 30px;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .login-toggle {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .toggle-button {
+            padding: 10px 20px;
+            border: none;
+            background: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: color 0.3s, background-color 0.3s;
+        }
+
+        .toggle-button.active {
+            color: #a0d8ef;
+            border-left: 4px solid #a0d8ef;
+        }
+
+        .toggle-button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .right-section {
+            padding: 40px 30px;
+            flex: 1.5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-form {
+            width: 100%;
+        }
+
+        .login-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #004b8d;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .forgot-password {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .forgot-password a {
+            color: #004b8d;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 10px;
+            background: #004b8d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .login-btn:hover {
+            background: #007acc;
+        }
+
+        .social-login {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .social-login p {
+            margin-bottom: 10px;
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .google-btn, .facebook-btn {
+            padding: 10px;
+            flex: 1;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .google-btn:hover, .facebook-btn:hover {
+            background: #004b8d;
+            color: white;
+        }
+
+        @media (max-width: 767px) {
+            .login-box {
+                width: 95%;
+            }
+
+            .input-group select {
+                font-size: 14px;
+            }
+
+            .login-form h2 {
+                font-size: 24px;
+            }
+
+            .input-group input, .input-group select {
+                font-size: 14px;
+            }
+
+            .login-btn {
+                font-size: 14px;
+            }
+
+            .social-login p {
+                font-size: 14px;
+            }
+
+            .google-btn, .facebook-btn {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h2><a href="index.html" style="color: white; text-decoration: none;">Academe-X</a></h2>
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="courses.html" class="nav-link">Courses</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="left-section">
+                <div class="login-toggle">
+                    <div class="toggle-button active" onclick="location.href='login.html'">LOGIN</div>
+                    <div class="toggle-button" onclick="location.href='signup.html'">SIGN UP</div>
+                </div>
+            </div>
+            <div class="right-section">
+                <div class="login-form">
+                    <h2>LOGIN</h2>
+                    <form action="dashboard.html">
+                        <div class="input-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="password" placeholder="Password" required>
+                        </div>
+                        <div class="forgot-password">
+                            <a href="forgot-password.html">Forgot Password?</a>
+                        </div>
+                        <button type="submit" class="login-btn">LOGIN</button>
+
+                        <div class="login-form-footer">
+                            <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

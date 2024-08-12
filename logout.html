@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout - Academe-X</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: #004b8d;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .nav-brand {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li {
+            margin: 0;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #a0d8ef;
+        }
+
+        .logout-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding-top: 60px;
+        }
+
+        .logout-box {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .logout-box h2 {
+            color: #004b8d;
+            margin-bottom: 20px;
+        }
+
+        .logout-box p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .logout-form {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .logout-btn {
+            padding: 10px 20px;
+            background: #004b8d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .logout-btn:hover {
+            background: #007acc;
+        }
+
+        .logout-options {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .option-btn {
+            padding: 10px 20px;
+            background: #004b8d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .option-btn:hover {
+            background: #007acc;
+        }
+
+        @media (max-width: 600px) {
+            .logout-box {
+                padding: 20px;
+            }
+
+            .logout-box h2 {
+                font-size: 22px;
+            }
+
+            .logout-box p {
+                font-size: 16px;
+            }
+
+            .logout-btn, .option-btn {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <h2><a href="index.html" style="color: white; text-decoration: none;">Academe-X</a></h2>
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="courses.html" class="nav-link">Courses</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="logout-container">
+        <div class="logout-box">
+            <h2>Logout</h2>
+            <p>Enter your credentials to logout.</p>
+            <form class="logout-form" onsubmit="event.preventDefault(); showLogoutOptions();">
+                <div class="input-group">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="logout-btn">Logout</button>
+            </form>
+
+            <div class="logout-options" id="logoutOptions">
+                <button class="option-btn" onclick="location.href='index.html'">Go to Homepage</button>
+                <button class="option-btn" onclick="location.href='login.html'">Login Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showLogoutOptions() {
+            document.querySelector('.logout-form').style.display = 'none';
+            document.getElementById('logoutOptions').style.display = 'flex';
+        }
+    </script>
+</body>
+
+</html>
